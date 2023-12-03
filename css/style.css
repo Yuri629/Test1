@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+/*import the font(woff) from google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+/* * meaning all of the element*/
+/* Here is the must for the whole body 
+style and let it fix in the border box*/
 * {
     margin: 0;
     padding:0;
@@ -7,10 +11,12 @@
     text-decoration:none;
     outline: none;
     border:none;
+    /*let the website can be jump by scolling when cilck on to jump to other page*/
     scroll-behavior: smooth;
     font-family:'Poppins',sans-snetif;
 }
 
+/*:root=set the whole html document in this color*/
 :root{
     --bg-color: #081b29;
     --second-bg-color:#112e42;
@@ -34,4 +40,7 @@ body{
     width:100%;
     padding:2rem 9%;
     background:yellowgreen;
+    display:flex;
+    justify-content:space-between;
+    align-item:100;
 }
