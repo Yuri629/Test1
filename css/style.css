@@ -23,8 +23,14 @@ style and let it fix in the border box*/
     --test-color:#ededed;
     --main-color:#00abf0;
 }
+
+/*html is use to change the px to rem.
+As 62.5% of the default font size is 16px, in rem is 16/10.  
+For example, 1.6rem will have a 16px rendering (16/10=1.6).*/ 
 html{
     font-size: 62.5%;
+    /*overflow-x is to clip the content or add a scroll bar*/
+    /*clip the content when the overflow st the left or right edges*/
     overflow-x:hidden ;
 }
 
@@ -40,6 +46,7 @@ body{
     width:100%;
     padding:2rem 9%;
     background:yellowgreen;
+    /*make the website display flexible*/
     display:flex;
     justify-content:space-between;
     align-items:100;
