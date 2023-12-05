@@ -39,8 +39,11 @@ body{
     color:var(--text-color);
 }
 
+/*class=header*/
 .header{
-    /* position:fixed; */
+    /*when using the position, 
+      write position= left/right, top/bottom*/
+    position:fixed;
     top:0;
     left:0;
     width:100%;
@@ -48,6 +51,15 @@ body{
     background:yellowgreen;
     /*make the website display flexible*/
     display:flex;
+    /*make the element have space between*/
     justify-content:space-between;
-    align-items:100;
+    align-items:center;
+    /*the order of the element*/
+    z-index:100;
+}
+
+.logo{
+    /*double half(2.5x) of the broswer's font, 2.5x16*/
+    font-size:2.5rem;
+    color: var(--text-color);
 }
