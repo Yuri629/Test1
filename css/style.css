@@ -101,12 +101,25 @@ section{
 
 .home{
     display:flex;
-    align-items:center;
+    background-position: absolute;
+    align-items:flex-end;
+    top: 0;
+    right:2vh;
     padding:10%;
     /*background image*/
-    background-image: url('/Users/GF63 12VE-032MY/Desktop/UI UX learning/Test1/assets/yoona.jpg');
-    background-size: cover;
-    background-position: center;
+    /*must use ("../assets/download.png")*/
+    /*background-image: url("../assets/download.png");
+    background-repeat: no-repeat;
+    background-size:30%;*/
+}
+
+.home-img img{
+    position: absolute;
+    bottom: -8rem;
+    right: 7rem;
+    width: 70%;
+    pointer-events: none;
+    border-radius: 5rem;
 }
 
 .home-content{
