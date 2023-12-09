@@ -287,18 +287,48 @@ span{
 align-items center will be better*/
 .about-img{
     width: 600px;
-    border: .5rem;
+    border: 2rem;
     justify-self: center;
     align-items: center;
-    filter: drop-shadow(3px 3px 3px var(--main-color));
+    filter: drop-shadow(1px 1px 1px var(--main-color));
+    transition: .3s;
+}
 
+.about-img:hover{
+    filter: drop-shadow(3px 3px 3px var(--main-color));
+    cursor: pointer;
+}
+
+/*set the css of the container of about me section*/
+.about-container{
+    display: flex;
 }
 
 .about-description{
     align-items: center;
     font-size: 1.6rem;
-    text-align: left;
-    margin-bottom: .25rem;
+    text-align: initial;
+    margin-top: 5rem;
+    
+}
+.button{
+    display: inline-block;
+    background-color: var(--main-color);
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.button-resume{
+    display: inline-flex;
+    align-items: center;
+}
+
+.resume-text{
+    font-size: 2rem;
+    
 }
 
 
