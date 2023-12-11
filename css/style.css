@@ -109,7 +109,7 @@ section{
     right:2vh;
     padding:10%;
     /*background image*/
-    /*must use ("../assets/download.png")*/
+    /*must use ("../assets/download.png") in github*/
     /*background-image: url("../assets/download.png");
     background-repeat: no-repeat;
     background-size:30%;*/
@@ -135,15 +135,19 @@ is under home-content*/
     font-size:3.2rem;
     font-weight: 700;
     color:transparent;
+    /*make a stroke/outline for the text*/
     -webkit-text-stroke: 1px var(--main-color);
 }
 
 .home-content p{
     font-size: 1.6rem;
+    /*if margin have four value, it will be top, right,bottom and left
+    if margin just 3 value,it will be top, right and left, bottom*/
     margin: 2rem 0 4rem;
 }
 
 /*button*/
+/*the whole condition of the linkedln,github and whatapp*/ 
 .btn-box{
     position:relative;
     display: flex;
@@ -152,6 +156,9 @@ is under home-content*/
     height: 5rem;
 }
 
+/*animation of button must have ori,hover, before,
+and hover::before*/
+/*the ori condition of the home-sci button*/
 .btn-box .btn{
     position:relative;
     display: inline-flex;
@@ -166,22 +173,12 @@ is under home-content*/
     border-radius: .8rem;
     font-size: 1.8rem;
     font-weight: 600;
+    /*the space between each alphabet*/
     letter-spacing: .1rem;
     color: var(--bg-color);
     z-index:1;
+    /*hide the scroll of the table or the border*/
     overflow: hidden;
-    transition: .5s;
-}
-
-.btn-box .btn::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: var(--bg-color);
-    z-index: -1;
     transition: .5s;
 }
 
@@ -190,8 +187,29 @@ is under home-content*/
     background: var(--bg-color);
 }
 
+/*before is use as a condition to 
+animate the transition or effect of the button*/
+.btn-box .btn::before{
+    content: '';
+    position: absolute;
+    /*this position will affect the animation
+    of the button*/
+    /*top and right, the animation will from right top angle*/
+    /*without position will be from the center*/
+    top: 0;
+    left: 0;
+    /*width and height also will affect the animation*/
+    width: 0;
+    background: var(--bg-color);
+    opacity: 0;
+    z-index: -1;
+    transition: .5s;
+}
+
 .btn-box .btn:hover::before{
+    opacity: 1;
     width:100%;
+    height: 100%;
 }
 
 .btn-box .btn:nth-child(2){
@@ -203,6 +221,8 @@ is under home-content*/
     background:var(--main-color);
 }
 
+/*no hover::before, so this button the first one 
+with the same class= 'btn'*/
 .btn-box .btn:nth-child(2):hover{
     color: var(--bg-color);
 }
@@ -233,25 +253,11 @@ is under home-content*/
     overflow: hidden;
 }
 
-.home-sci a::before{
-    content:'';
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:var(--bg-color);
-    z-index: -1;
-    transition: .3s;
-}
 
 .home-sci a:hover{
     color: var(--bg-color);
     background: var(--main-color);
-}
 
-.home-sci a:hover::before{
-    background: var(--main-color);
 }
 
 .home-img{
@@ -315,21 +321,21 @@ align-items center will be better*/
 
 /*button of about me*/
 .button{
-    display: inline-block;
+    display: inline-flex;
     margin-top: 1.5rem;
-    background-color: var(--bg-color);
-    font-size: 1.5rem;
+    align-items: center;
     border-radius: .5rem;
     padding: 1.3rem;
+
+    font-size: 1.5rem;
     font-weight: 500;
-    color: var(--text-color);
+
+    color: var(--bg-color);
+    background-color: var(--main-color);
 }
 
 /*glow of the button*/
 .button-about{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: center;
     margin-top: 3rem;
 }
@@ -337,27 +343,32 @@ align-items center will be better*/
 
 .button-resume{
     align-items: center;
-    border: none;
     outline: none;
+    margin-left: 5rem;
     cursor: pointer;
+    position: relative;
     z-index: 0;
     border-radius: 10px;
+    border: .2rem solid var(--main-color);
     color: var(--text-color);
-    background: var(--bg-color);
+
 }
 
 .button-resume:before{
     content: '';
     /*the 45deg is the angle of the linear gradient,and the back is the color*/
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000));
+    background: linear-gradient(30deg, #ff0000,#7a00ff, #000000,#ff00c8, #ff0000);
     position: absolute;
-    top: -2px;
-    left: -2px;
+    top: -3px;
+    left: -3px;
+    bottom: -3px;
+    right: -3px;
+    /*each of the color of the background color*/
     background-size: 400%;
     z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
+    /*the area of the blur color of the button outline*/
+    filter: blur(10px);
+
     animation: glowing 20s linear infinite;
     opacity: 0;
     transition: opacity .3s ease-in-out;
@@ -365,7 +376,7 @@ align-items center will be better*/
 }
 
 .button-resume:active{
-    color: var(--text-color);
+    color: var(--bg-color);
 }
 
 .button-resume:active:after{
@@ -377,15 +388,15 @@ align-items center will be better*/
 }
 
 .button-resume:after{
-    z-index: -1;
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
-    background: var(--text-color);
+    background: var(--bg-color);
     left: 0;
     top: 0;
     border-radius: 10px;
+    z-index: -1;
 
 }
 
