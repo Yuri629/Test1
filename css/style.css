@@ -261,6 +261,7 @@ with the same class= 'btn'*/
 }
 
 .home-img{
+    display: flex;
     position:relative;
     top: 0;
     right: 0;
