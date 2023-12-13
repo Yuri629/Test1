@@ -24,6 +24,7 @@ style and let it fix in the border box*/
     --text-color:#000000;
     --main-color:#ff59c7;
     --grey-color-text:#808080;
+    --dimgray-color-text: #696969;
 }
 
 /*html is use to change the px to rem.
@@ -96,7 +97,8 @@ if it not as a class and it is an action like hover,use a:hover*/
     display: none;
 }
 
-/*home*/
+/*important to fix the margin and padding of 
+every section*/
 section{
     /*vh = view height*/
     min-height: 100vh;
@@ -465,34 +467,90 @@ align-items center will be better*/
 
 .education-column .title{
     font-size: 2.5rem;
-    margin: 0 0 1.5rem 2rem;
-
+    margin-bottom: 2.5rem;
 }
 
-.education-column .timeline{
-    border-left: .2rem solid var(--main-color);
+.education-column .title i{
+    color: var(--main-color);
 }
+
+/*set the position of the dot*/
+/*.timeline .timeline-item::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: -1.1rem; 
+    width: 2rem;
+    height: 2rem;
+    background: var(--main-color);
+    border-radius: 50%;
+}*/
 
 .timeline .timeline-item{
     position: relative;
-    padding-left: 2rem;
-    margin-bottom: 2rem;
+    padding-left: 3rem;
+    margin-bottom: 2.5rem;
+    cursor: default;
+}
+
+.timeline-item:last-child{
+    margin-bottom: 0;
+}
+
+/*set the line in front the qualification field*/
+.timeline-item::before{
+    content: '';
+    width: 1px;
+    position: absolute;
+    left: .3rem;
+    top: 0;
+    height: 100%;
+    background-color: var(--main-color);
 }
 
 .timeline-item .timeline-title{
-    font-size: 2.5rem;
-    color: var(--main-color);
+    font-size: 2rem;
+    color: var(--text-color);
     padding-bottom: .5rem;
 }
 
-.timeline-item .circus-dot{
-    position: relative;
-    padding: 1.5rem;
+.circle-dot{
+    position: absolute;
+    left: -.7rem;
+    top: 0;
+    height: 2rem;
+    width: 2rem;
+    background: var(--bg-color);
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+
+}
+/*set the text and the dot change color when hover*/
+.timeline-item:hover .circle-dot {
+    background-color: var(--main-color);
+}
+.timeline-item:hover .timeline-title {
+    color: var(--main-color);
+}
+.timeline-item:hover{
+    color: var(--main-color);
+}
+.timeline-item:hover .timeline-date{
+    color: var(--main-color);
+}
+
+.timeline-item p{
+    font-size: 1.5rem;
 }
 
 .timeline-item .timeline-date{
-    font-size: 1rem;
+    font-size: 1.5rem;
     color:var(--grey-color-text);
+}
+
+.timeline-item .timeline-date i{
+    padding-right: .5rem;
+    color: var(--main-color);
 }
 
 
