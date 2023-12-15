@@ -128,6 +128,7 @@ section{
     font-size:5.6rem;
     font-weight: 700;
     line-height: 2.0;
+    cursor: default;
 }
 
 /*no (,) between the home and text because text-animate
@@ -553,4 +554,80 @@ align-items center will be better*/
     color: var(--main-color);
 }
 
+/*=============SKILLS============*/
+.skill-container{
+    row-gap: 3.5rem;
+}
 
+.skills-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: .5rem;
+    font-size: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+
+}
+
+.skill-info,
+.skills-data,
+.skills-blob{
+    display: grid;
+}
+
+.skill-info{
+    /*3 column and each column is 1fr*/
+    grid-template-columns: repeat(3,1fr);
+    gap: 2.5rem 2rem;
+}
+
+.skills-data{
+    justify-content: center;
+    text-align: center;
+}
+
+.skills-blob{
+    width: 80px;
+    height: 100px;
+    background-color: var(--bg-color);
+    border-radius: 3rem;
+    place-items: center;
+    margin-bottom: 1rem;
+}
+
+.skills-blob img{
+    width: 40px;
+}
+.skills-name{
+    font-size: 1.5rem;
+    margin-bottom:.25rem ;
+}
+
+/*ANIMATION OF SKILL*/  
+.skills-blob:hover img{
+    /*name of the animation and make one @keyframe 
+    same name as "bounce-skills"*/
+    animation: bounce-skills .6s;
+}
+
+/*bounce animation, % is the percentage of the process
+and the transform is a name and the translate() is the animation
+and the 0, -6px.....is the value of the movement*/
+@keyframes bounce-skills{
+    0%{
+        transform: translate(0);
+    }
+    20%{
+        transform: translate(-6px);
+    }
+    40%{
+        transform: translate(0);
+    }
+    60%{
+        transform: translate(-3px);
+    }
+    80%{
+        transform: translate(0);
+    }
+}
