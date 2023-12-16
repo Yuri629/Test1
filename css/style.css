@@ -25,6 +25,10 @@ style and let it fix in the border box*/
     --main-color:#ff59c7;
     --grey-color-text:#808080;
     --dimgray-color-text: #696969;
+
+    --margin-bottom-3: 3rem;
+    --font-size-section-title: 5rem;
+    --font-size-small-title: 2.5rem;
 }
 
 /*html is use to change the px to rem.
@@ -462,9 +466,6 @@ align-items center will be better*/
     gap: 5rem;
 }
 
-.education-row .education-column{
-    margin-bottom: 40rem;
-}
 
 .education-column .title{
     font-size: 2.5rem;
@@ -555,8 +556,19 @@ align-items center will be better*/
 }
 
 /*=============SKILLS============*/
+.Skills h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-size-section-title);
+    margin-bottom: 5rem;
+    color: var(--main-color);
+}
+
 .skill-container{
-    row-gap: 3.5rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 10rem;
 }
 
 .skills-title{
@@ -564,10 +576,21 @@ align-items center will be better*/
     justify-content: center;
     align-items: center;
     column-gap: .5rem;
-    font-size: var(--text-color);
-    font-weight: 500;
-    margin-bottom: 2.5rem;
 
+    margin-bottom: 3rem;
+    font-size: var(--font-size-small-title);
+
+}
+
+.skills-title i{
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.skills-subtitle{
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--main-color);
 }
 
 .skill-info,
@@ -578,8 +601,9 @@ align-items center will be better*/
 
 .skill-info{
     /*3 column and each column is 1fr*/
-    grid-template-columns: repeat(3,1fr);
-    gap: 2.5rem 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2.5rem;
+    column-gap: 1.5rem;
 }
 
 .skills-data{
@@ -590,14 +614,14 @@ align-items center will be better*/
 .skills-blob{
     width: 80px;
     height: 100px;
-    background-color: var(--bg-color);
+    border: 2.5px solid var(--main-color);
     border-radius: 3rem;
     place-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: var(--margin-bottom-3);
 }
 
 .skills-blob img{
-    width: 40px;
+    width: 60px;
 }
 .skills-name{
     font-size: 1.5rem;
@@ -619,15 +643,16 @@ and the 0, -6px.....is the value of the movement*/
         transform: translate(0);
     }
     20%{
-        transform: translate(-6px);
+        transform: translateY(-6px);
     }
     40%{
         transform: translate(0);
     }
     60%{
-        transform: translate(-3px);
+        transform: translateY(-3px);
     }
     80%{
         transform: translate(0);
     }
 }
+
