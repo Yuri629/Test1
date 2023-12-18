@@ -655,17 +655,19 @@ and the 0, -6px.....is the value of the movement*/
     }
 }
 
-/*=======Portfolio=========*/
+/*********************Section Portfolio********************/
 .portfolio h1{
     display: flex;
     justify-content: center;
     font-size: var(--font-size-section-title);
     color: var(--main-color);
+    margin-bottom: 2rem;
+
 }
 
 /*--===================Portfolio Container=================*/
 .portfolio-container{
-    width: 1000px;
+    width: 1150px;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -684,7 +686,8 @@ and the 0, -6px.....is the value of the movement*/
 
 .portfolio-container .card .face.face1{
     position: relative;
-    background: var(--main-color);
+    background: var(--bg-color);
+
     display: flex;
     justify-content: center;
     align-content: center;
@@ -698,13 +701,13 @@ and the 0, -6px.....is the value of the movement*/
     box-shadow: 
     /*---------------First color----------*/
     inset 0 0 60px whitesmoke,
-    inset 20px 0 80px #f0f,
-    inset -20px 0 80px #0ff,
-    inset 20px 0 300px #f0f,
-    inset -20px 0 300px #0ff,
+    inset 20px 0 80px var(--main-color),
+    inset -20px 0 80px rgba(4, 0, 255, 0.604),
+    inset 20px 0 300px var(--main-color),
+    inset -20px 0 300px rgba(4, 0, 255, 0.604),
     0 0 50px #fff,
-    -10px 0 80px #f0f,
-    10px 0 80px #0ff;
+    -10px 0 80px var(--main-color),
+    10px 0 80px rgba(4, 0, 255, 0.604);
 
     /*------------Second color--------------*/
     /*inset 0 0 60px var(--main-color),
@@ -713,6 +716,16 @@ and the 0, -6px.....is the value of the movement*/
     inset 20px 0 300px #4e137e,
     inset -20px 0 300px #d5a8c0,
     0 0 50px #a467ad,
+    -10px 0 80px #f8aedc,
+    10px 0 80px #0ff;*/
+
+    /*------------Third color--------------*/
+    /*inset 0 0 60px #020024,
+    inset 20px 0 80px var(--main-color),
+    inset -20px 0 80px #ff3b8d,
+    inset 20px 0 300px #00dfff,
+    inset -20px 0 300px #ed59ff,
+    0 0 50px #ff3b8d,
     -10px 0 80px #f8aedc,
     10px 0 80px #0ff;*/
 }
@@ -734,7 +747,7 @@ and the 0, -6px.....is the value of the movement*/
 
 .portfolio-container .card .face.face1 .content h3{
     font-size: 1rem;
-    color: var(--bg-color);
+    color: var(--text-color);
     text-align: center;
 }
 
@@ -744,13 +757,13 @@ and the 0, -6px.....is the value of the movement*/
 
 .portfolio-container .card .face.face2{
     position: relative;
-    background: whitesmoke;
+    background: #333;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
     box-sizing: border-box;
-    box-shadow: 0 20ox 50px rgba(0,0,0,.8);
+    box-shadow: 0 20px 70px rgba(255, 12, 190, 0.575);
     transform: translateY(-100px);
 }
 
@@ -762,14 +775,14 @@ and the 0, -6px.....is the value of the movement*/
     font-size: 10pt;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: var(--bg-color);
 }
 
 .portfolio-container .card .face.face2 .content a{
     text-decoration: none;
-    color: black;
+    color: var(--bg-color);
     box-sizing: border-box;
-    outline: 1px dashed #333;
+    outline: 1px dashed var(--bg-color);
     padding: 10px;
     margin: 15px 0 0;
     display: inline-block;
