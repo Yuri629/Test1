@@ -667,10 +667,12 @@ and the 0, -6px.....is the value of the movement*/
 
 /*--===================Portfolio Container=================*/
 .portfolio-container{
-    width: 1150px;
+    width: 1215px;
     position: relative;
     display: flex;
     justify-content: space-between;
+    /*keep the size of the box and make it fix in the section
+    and it will function when display:flex written*/
     flex-wrap: wrap;
 }
 
@@ -679,12 +681,14 @@ and the 0, -6px.....is the value of the movement*/
 }
 
 .portfolio-container .card .face{
+    /*size of the card*/
     width: 300px;
     height: 200px;
     transition: .4s;
 }
 
 .portfolio-container .card .face.face1{
+    /*the ori color of the front card*/
     position: relative;
     background: var(--bg-color);
 
@@ -693,21 +697,25 @@ and the 0, -6px.....is the value of the movement*/
     align-content: center;
     align-items: center;
     z-index: 1;
+    /*make the position of the card before hover to 100px*/
     transform: translateY(100px);
 }
 
 .portfolio-container .card:hover .face.face1{
+    /*make the y-axis position of the front card move to 0*/
     transform: translateY(0);
     box-shadow: 
-    /*---------------First color----------*/
+    /*--------------------------First color--------------------*/
+    /*change the color inside the card after hover*/
     inset 0 0 60px whitesmoke,
     inset 20px 0 80px var(--main-color),
     inset -20px 0 80px rgba(4, 0, 255, 0.604),
     inset 20px 0 300px var(--main-color),
     inset -20px 0 300px rgba(4, 0, 255, 0.604),
-    0 0 50px #fff,
+    /*the color outside the box*/
+    0 0 30px #fff,
     -10px 0 80px var(--main-color),
-    10px 0 80px rgba(4, 0, 255, 0.604);
+    10px 0 80px rgba(195, 0, 255, 0.604);
 
     /*------------Second color--------------*/
     /*inset 0 0 60px var(--main-color),
@@ -730,31 +738,44 @@ and the 0, -6px.....is the value of the movement*/
     10px 0 80px #0ff;*/
 }
 
+/*the content of the front card*/
 .portfolio-container .card .face.face1 .content{
-    opacity: .2;
     transition: .5s;
     text-align: center;
 }
 
+/*the hover action of the front card*/
 .portfolio-container .card:hover .face.face1 .content{
     opacity: 1;
 }
-.container .card .face.face1 .content i{
-    font-size: 3rem;
-    color: white;
+
+/*the ori of the icon of the front card*/
+.portfolio-container .card .face.face1 .content i{
+    font-size: 2.5rem;
+    color: var(--text-color);
     display: inline-block;
 }
 
+/*the hover action of the icon of the front card*/
+.portfolio-container .card:hover .face.face1 .content i{
+
+    color: var(--bg-color);
+}
+
+/*the title of the front card*/
 .portfolio-container .card .face.face1 .content h3{
-    font-size: 1rem;
-    color: var(--text-color);
+    font-size: 1.5rem;
+    color: var(--main-color);
     text-align: center;
 }
 
-.portfolio-container .card .face.face1 .content a{
-    transition: .5s;
+/*the hover action of the title of the front card*/
+.portfolio-container .card:hover .face.face1 .content h3{
+
+    color: var(--bg-color);
 }
 
+/*the design of the back card*/
 .portfolio-container .card .face.face2{
     position: relative;
     background: #333;
@@ -772,7 +793,7 @@ and the 0, -6px.....is the value of the movement*/
 }
 
 .portfolio-container .card .face.face2 .content p, a{
-    font-size: 10pt;
+    font-size: 1.5rem;
     margin: 0;
     padding: 0;
     color: var(--bg-color);
@@ -782,14 +803,40 @@ and the 0, -6px.....is the value of the movement*/
     text-decoration: none;
     color: var(--bg-color);
     box-sizing: border-box;
+    /*the outline of the button*/
     outline: 1px dashed var(--bg-color);
     padding: 10px;
     margin: 15px 0 0;
     display: inline-block;
 }
 
+/*the second button in second card*/
+.portfolio-container .card .face.face2 .content .content2{
+    margin-left: 10px;
+}
+
 .portfolio-container .card .face.face2 .content a:hover{
     background: #333;
     color: whitesmoke;
-    box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 0px 10px var(--main-color);
+}
+
+/*===================Contact section================*/
+.section_title{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: var(--font-size-section-title);
+    color: var(--main-color);
+
+}
+
+.contact-container{
+    /*display: grid is very important to change the tmeplate of the section*/
+    /*if not the grid-template-columns dont function well*/
+    display: grid;
+    grid-template-columns: 300px 340px;
+    column-gap: 3rem;
+    justify-content: center;
+    align-items: center; 
 }
