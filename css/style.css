@@ -660,7 +660,6 @@ and the 0, -6px.....is the value of the movement*/
     display: flex;
     justify-content: center;
     font-size: var(--font-size-section-title);
-    color: var(--main-color);
     margin-bottom: 2rem;
 
 }
@@ -825,9 +824,9 @@ and the 0, -6px.....is the value of the movement*/
 .section_title{
     display: flex;
     justify-content: center;
-    align-content: center;
     font-size: var(--font-size-section-title);
     color: var(--main-color);
+    margin: 0 0 50px;
 
 }
 
@@ -840,3 +839,60 @@ and the 0, -6px.....is the value of the movement*/
     justify-content: center;
     align-items: center; 
 }
+
+.contact-info{
+    display: grid;
+    row-gap: 1rem;
+}
+
+.contact-card{
+    background-color: var(--main-color);
+    padding: 1rem;
+    border-radius: .5rem;
+    text-align: center;
+    color: var(--bg-color);
+    font-size: 1.2rem;
+    transition: .5s;
+}
+
+.contact-card-icon{
+    font-size: 1.8rem;
+    margin-bottom: .75rem;
+}
+
+.content-card span{
+    color: var(--bg-color);
+}
+
+.contact-card:hover{
+    transform: translateY(-.5rem);
+}
+
+/*.contact_card-title{
+    font-weight: 800;
+}
+
+.contact_card-data{
+    display: block;
+    margin-bottom:.75rem;
+}
+
+.contact_button{
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    column-gap: .25rem;
+    cursor: pointer;
+    
+}
+
+.contact_button-icon{
+    font-size: 1rem;
+    transition: .3s;
+}
+
+.contact_button:hover .contact_button-icon{
+    transform: translateX(.5rem);
+}*/
