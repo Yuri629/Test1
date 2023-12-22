@@ -1,4 +1,5 @@
 /*===============Animation of the Input in Contact Section=========*/
+/*name the document that the class is input into Inputs*/
 const Inputs =document.querySelectorAll(".input");
 
 function focusFunc(){
