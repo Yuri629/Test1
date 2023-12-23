@@ -370,26 +370,30 @@
     <div class="contact-container container grid">
         <div class="contact-content">
             <div class="contact-info">
-                <div class="contact-card">
-                    <!--can add other name of class at the back of the icon name 
-                    that get from Box Icon-->
-                    <i class='bx bxs-envelope contact-card-icon' ></i>
-                    <h3 class="contact_card-title">Email</h3>
-                    <div class="contact_card-data">manteng629@gmail.com</div>
-                    <div class="contact_button">
-                        Contact me <i class='bx bx-right-arrow-alt contact_button-icon'' ></i>
-                    </div>
-                </div>
-            
 
-                <div class="contact-card">
-                    <i class='bx bxl-whatsapp contact-card-icon' ></i>
-                    <h3 class="contact_card-title">WhatsApp</h3>
-                    <div class="contact_card-data">+6018-9511629</div>
-                    <div class="contact_button">
-                        Contact me <i class='bx bx-right-arrow-alt contact_button-icon' ></i>
+                <a href="mailto:manteng629@gmailcom">
+                    <div class="contact-card">
+                        <!--can add other name of class at the back of the icon name 
+                        that get from Box Icon-->
+                        <i class='bx bxs-envelope contact-card-icon' ></i>
+                        <h3 class="contact_card-title">Email</h3>
+                        <div class="contact_card-data">manteng629@gmail.com</div>
+                        <div class="contact_button">
+                            Contact me <i class='bx bx-right-arrow-alt contact_button-icon'' ></i>
+                        </div>
                     </div>
-                </div>
+                </a>
+            
+                <a href="https://wa.link/qa66ve">
+                    <div class="contact-card">
+                        <i class='bx bxl-whatsapp contact-card-icon' ></i>
+                        <h3 class="contact_card-title">WhatsApp</h3>
+                        <div class="contact_card-data">+6018-9511629</div>
+                        <div class="contact_button">
+                            Contact me <i class='bx bx-right-arrow-alt contact_button-icon' ></i>
+                        </div>
+                    </div>
+                </a>
 
                 <div class="contact-card">
                     <i class='bx bxl-linkedin contact-card-icon' ></i>
@@ -403,33 +407,36 @@
         </div>
 
         <div class="contact_content">
-            <form action="" class="contact_form">
+            <form action="" class="contact_form" id="contact_form">
                 <div class="input_container">
-                    <input type="text" class="input">
+                    <!--******name = use in EmailJS to send email to gmail****-->
+                    <input type="text" class="input" name="user_name">
                     <label for="">Username</label>
                     <div class="input2">Username</div>
                 </div>
                 <div class="input_container">
-                    <input type="email" class="input">
+                    <input type="email" class="input" name="user_email">
                     <label for="">Email</label>
                     <div class="input2">Email</div>
                 </div>
 
                 <div class="input_container">
-                    <input type="tel" class="input">
+                    <input type="tel" class="input" name="user_phone">
                     <label for="">Phone</label>
                     <div class="input2">Phone</div>
                 </div>
 
                 <div class="input_container">
-                    <textarea class="input" name="" id="" ></textarea>
+                    <textarea class="input" name="user_message" id="" ></textarea>
                     <label for="">Message</label>
                     <div class="input2">Message</div>
                 </div>
                 
-                <button type="submit" class="button">
+                <button type="submit" class="contact_button1">
                     Send Message <i class='bx bx-navigation' ></i>
                 </button>
+
+                <p class="contact_message" id="contact_message">message</p>
 
             </form>
         </div>
