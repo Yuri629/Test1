@@ -1038,16 +1038,112 @@ textarea.input{
 .contact_button1:hover{
     color:var(--main-color);
     background: var(--bg-color);
+    box-shadow: 0px 0px 15px var(--main-color);
 }
 
-.contact_message p{
-    position: absolute;
-    margin-top: 20rem;
-    left: 0;
+.contact_message{
     font-size: 1.2rem;
+    margin-top: 1rem;
+    font-weight: 500;
     color: var(--text-color);
+
 }
 
+/*==================FOOTER=================*/
+.footer{
 
+    background-color: var(--main-color);
+    height: auto;
+    width: 100vw;
+    padding-top: 40px;
+    color: var(--bg-color);
+}
+
+.footer_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer_logo{
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+.footer_content{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+.footer_links{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+    column-gap: 1.5rem;
+}
+
+.footer_links a{
+    font-size: 1.6rem;
+}
+
+.footer_links a:hover{
+    text-decoration: underline;
+    color: #000000;
+}
+
+.footer_social{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+
+.footer_social li{
+    margin: 0 10px;
+}
+
+.footer_social a{
+    text-decoration: none;
+    color: var(--bg-color);
+}
+
+.footer_social a i{
+    font-size: 2rem;
+    transition: color .4s ease;
+}
+
+.footer_social a:hover i{
+    color: #000000;
+    transform: scale(1.5);
+    
+}
+.footer_copy{
+    background-color: var(--main-color);
+    width: 100vw;
+    padding: 8px 0;
+    text-align: center;
+}
+
+.footer_copy p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.footer_copy span{
+    text-transform: uppercase;
+    opacity: .5;
+    font-weight: 900;
+    color: var(--bg-color);
+
+}
 
 

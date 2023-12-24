@@ -394,40 +394,42 @@
                         </div>
                     </div>
                 </a>
-
-                <div class="contact-card">
-                    <i class='bx bxl-linkedin contact-card-icon' ></i>
-                    <h3 class="contact_card-title">Linkedin</h3>
-                    <div class="contact_card-data">Ng Man Teng</div>
-                    <div class="contact_button">
-                        Contact me <i class='bx bx-right-arrow-alt contact_button-icon'' ></i>
+                
+                <a href="https://www.linkedin.com/in/ng-man-teng-0a625123a/">
+                    <div class="contact-card">
+                        <i class='bx bxl-linkedin contact-card-icon' ></i>
+                        <h3 class="contact_card-title">Linkedin</h3>
+                        <div class="contact_card-data">Ng Man Teng</div>
+                        <div class="contact_button">
+                            Contact me <i class='bx bx-right-arrow-alt contact_button-icon'' ></i>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
 
         <div class="contact_content">
-            <form action="" class="contact_form" id="contact_form">
+            <form action="" class="contact_form" id="contact-form">
                 <div class="input_container">
                     <!--******name = use in EmailJS to send email to gmail****-->
-                    <input type="text" class="input" name="user_name">
+                    <input type="text" class="input" name="user_name" required>
                     <label for="">Username</label>
                     <div class="input2">Username</div>
                 </div>
                 <div class="input_container">
-                    <input type="email" class="input" name="user_email">
+                    <input type="email" class="input" name="user_email" required>
                     <label for="">Email</label>
                     <div class="input2">Email</div>
                 </div>
 
                 <div class="input_container">
-                    <input type="tel" class="input" name="user_phone">
+                    <input type="tel" class="input" name="user_phone" required>
                     <label for="">Phone</label>
                     <div class="input2">Phone</div>
                 </div>
 
                 <div class="input_container">
-                    <textarea class="input" name="user_message" id="" ></textarea>
+                    <textarea class="input" name="user_message" id="" required></textarea>
                     <label for="">Message</label>
                     <div class="input2">Message</div>
                 </div>
@@ -436,7 +438,7 @@
                     Send Message <i class='bx bx-navigation' ></i>
                 </button>
 
-                <p class="contact_message" id="contact_message">message</p>
+                <p class="contact_message" id="contact-message"></p>
 
             </form>
         </div>
@@ -444,6 +446,62 @@
 
 </section>
 
+<!--==================================Footer==================-->
+<footer class="footer">
+    <div class="footer_container container grid">
+        <div class="footer_content grid">
+            <h3><a href="#home" class="footer_logo">Man Teng</a></h3>
+
+            <ul class="footer_links">
+                <li>
+                    <a href="#about" class="footer_link" >About Me</a>
+                </li>
+
+                <li>
+                    <a href="#My-journey" class="footer_link">My Journey</a>
+                </li>
+
+                <li>
+                    <a href="#skills" class="footer_link">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#portfolio" class="footer_link">Portfolio</a>
+                </li>
+
+                <li>
+                    <a href="#contact" class="footer_link">Contact</a>
+                </li>
+            </ul>
+            <ul class="footer_social">
+                <li>
+                    <a href="https://github.com/Yuri629" target="_blank" class="footer_social-link">
+                        <i class='bx bxl-github' ></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/ng-man-teng-0a625123a/" target="_blank" class="footer_social-link">
+                        <i class='bx bxl-linkedin'></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.link/qa66ve" target="_blank" class="footer_social-link">
+                        <i class='bx bxl-whatsapp' ></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer_copy">
+            <p>Copyright &copy;2020 designed By <span>Man Teng</span></p>
+        </div>
+    </div>
+</footer>
+<!--==============Email JS=================-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<!--==============JavaScript==============-->
     <script src="js/script.js"></script>
+<!--==============Contact JavaScript send message to email=======-->
+    <script src="js/Contact-Send-email.js"></script>
 </body>
 </html>
