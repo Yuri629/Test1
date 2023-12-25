@@ -66,7 +66,18 @@ body{
     align-items:center;
     /*the order of the element*/
     z-index:100;
+    transition: .3s;
 }
+
+
+/*.sticky is use in JavaScript*/
+.header.sticky{
+    background: var(--bg-color);
+    
+    z-index: 12000;
+}
+
+
 
 /*navbar*/
 .logo{
@@ -1138,10 +1149,10 @@ textarea.input{
     text-transform: capitalize;
 }
 
-.footer_copy span{
+.footer_design{
     text-transform: uppercase;
-    opacity: .5;
-    font-weight: 900;
+    opacity: .8;
+    font-weight: 500;
     color: var(--bg-color);
 
 }
