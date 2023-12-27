@@ -5,7 +5,9 @@
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
+//when the window start to scroll
 window.onscroll = () => {
+    //call the function forEach elements
     sections.forEach(sec => {
         let top = window.scrollY;
         let offset = sec.offsetTop - 100;
