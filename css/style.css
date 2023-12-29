@@ -300,15 +300,15 @@ with the same class= 'btn'*/
 
 .home-img{
     display: flex;
-    width: 100%;
-    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .home-img img{
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 0 0 15rem ;
-    width: 60vh;
+
+    position: relative;
+    margin: 0 3rem 0 15rem;
+    width: 50vh;
     pointer-events: none;
     border-radius: 5rem;
 }
@@ -677,6 +677,7 @@ and the 0, -6px.....is the value of the movement*/
     position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     /*keep the size of the box and make it fix in the section
     and it will function when display:flex written*/
     flex-wrap: wrap;
@@ -1193,10 +1194,11 @@ textarea.input{
         left: -100%;
         width: 100%;
         padding: 1rem 4%;
-        background: var(--bg-color);
+        background-color: var(--bg-color);
         box-shadow: 0 .5rem 1rem var(--text-color);
         transition: .25s ease;
         transition-delay: .25s;
+        z-index: 1;
     }
 
     .navbar.active{
@@ -1205,9 +1207,41 @@ textarea.input{
 
     }
 
+    .navbar .active-nav{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:var(--text-color);
+        border-top: .1rem solid var(--text-color);
+        z-index: -1;
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    /*make one more layer at the back of the navbar*/
+    .navbar.active .active-nav{
+        transition-delay: .25s;
+    }
+
     .navbar a{
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
+        color: var(--bg-color);
+        transform: translateX(-20rem);
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar a.active{
+        color: var(--main-color);
+    }
+
+    .navbar.active a{
+        transform: translateX(0);
+        transition-delay: .15s;
+        
     }
 }
