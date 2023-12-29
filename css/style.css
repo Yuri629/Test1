@@ -87,6 +87,7 @@ body{
     font-weight: 600;
 }
 
+
 .navbar a {
     font-size:1.7rem;
     color:var(--text-color);
@@ -104,6 +105,7 @@ if it not as a class and it is an action like hover,use a:hover*/
     color:var(--main-color);
 }
 
+/*================VISIBLE NAVBAR FOR MOBILE=============*/
 /*menu icon = display is none, so it unvisible*/
 #menu-icon{
     font-size:3.6rem;
@@ -303,9 +305,10 @@ with the same class= 'btn'*/
 }
 
 .home-img img{
-    position: relative;
-    margin: 0 10rem 0;
-    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 0 15rem ;
+    width: 60vh;
     pointer-events: none;
     border-radius: 5rem;
 }
@@ -326,12 +329,10 @@ span{
 align-items center will be better*/
 .about-img{
     display: flex;
-    position: relative;
-    width: 600px;
-    height: 400px;
+    justify-content: flex-start;
+    width: 60vh;
+    height: 40vh;
     border: 2rem;
-    justify-self: center;
-    align-items: center;
     filter: drop-shadow(1px 1px 1px var(--main-color));
     transition: .3s;
 }
@@ -1184,5 +1185,29 @@ textarea.input{
 
     #menu-icon{
         display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--bg-color);
+        box-shadow: 0 .5rem 1rem var(--text-color);
+        transition: .25s ease;
+        transition-delay: .25s;
+    }
+
+    .navbar.active{
+        left: 0;
+        transition-delay: 0s;
+
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
     }
 }
