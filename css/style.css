@@ -119,7 +119,8 @@ every section*/
 section{
     /*vh = view height*/
     min-height: 100vh;
-    padding: 10rem 9% 2rem;
+    padding: 2rem 0 4rem;
+    display: block;
 }
 
 .home{
@@ -138,8 +139,10 @@ section{
 }
 
 .home-content{
+    
     max-width:60rem;
 }
+
 
 .home-content h1{
     font-size:5.6rem;
@@ -167,6 +170,21 @@ is under home-content*/
     /*if margin have four value, it will be top, right,bottom and left
     if margin just 3 value,it will be top, right and left, bottom*/
     margin: 2rem 0 4rem;
+}
+
+.home-img{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.home-img img{
+
+    position: relative;
+    margin: 0 3rem 0 15rem;
+    width: 50vh;
+    pointer-events: none;
+    border-radius: 5rem;
 }
 
 /*button*/
@@ -298,20 +316,6 @@ with the same class= 'btn'*/
 
 }
 
-.home-img{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.home-img img{
-
-    position: relative;
-    margin: 0 3rem 0 15rem;
-    width: 50vh;
-    pointer-events: none;
-    border-radius: 5rem;
-}
 
 /*section about me*/
 .heading{
@@ -328,8 +332,7 @@ span{
 /*this is second section, and put justify center and 
 align-items center will be better*/
 .about-img{
-    display: flex;
-    justify-content: flex-start;
+
     width: 60vh;
     height: 40vh;
     border: 2rem;
@@ -344,10 +347,15 @@ align-items center will be better*/
 
 /*set the css of the container of about me section*/
 .about-container{
-    display: flex;
+    display: flex ;
+    align-items: center;
+    justify-content: center;
 }
 
 .about-description{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
     align-items: center;
     font-size: 1.6rem;
     text-align: initial;
@@ -1061,8 +1069,8 @@ textarea.input{
 .footer{
 
     background-color: var(--main-color);
-    height: 50vw;
-    width: 150vw;
+    height: 100vw;
+    width: 100vw;
     padding-top: 40px;
     color: var(--bg-color);
 }
@@ -1136,6 +1144,7 @@ textarea.input{
 .footer_copy{
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: var(--main-color);
     padding: 0 ;
     text-align: center;
@@ -1163,10 +1172,6 @@ textarea.input{
 }
 
 @media (max-width: 991px){
-    html{
-        
-    }
-
     section{
         padding: 10rem 4% 2rem;
     }
@@ -1282,7 +1287,13 @@ textarea.input{
 
     .contact-container{
         display: flex;
+        justify-content: space-between;
+        align-items: center;
         flex-direction: column;
+    }
+
+    .contact-info{
+        margin-bottom: 2rem;
     }
     
     .contact-container form .input-container .input{
@@ -1295,9 +1306,4 @@ textarea.input{
     .footer_container a{
         margin-top: 2rem;
     }*/
-
-    .footer_copy{
-        width: 100%;
-        height: 100%;
-    }
 }
