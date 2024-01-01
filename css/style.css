@@ -1067,9 +1067,12 @@ textarea.input{
 
 /*==================FOOTER=================*/
 .footer{
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
     background-color: var(--main-color);
-    height: 100vw;
     width: 100vw;
     padding-top: 40px;
     color: var(--bg-color);
@@ -1096,6 +1099,7 @@ textarea.input{
     line-height: 28px;
     font-size: 14px;
 }
+
 .footer_links{
     list-style: none;
     display: flex;
@@ -1162,6 +1166,45 @@ textarea.input{
     font-weight: 500;
     color: var(--bg-color);
 
+}
+
+/*==========================Scroll Bar===================*/
+::-webkit-scrollbar{
+    width: 1rem;
+    background-color: var(--grey-color-text);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: var(--second-bg-color);
+}
+
+/*===================Scroll up==========================*/
+.scrollup{
+    position: fixed;
+    right: 5rem;
+    bottom: -50%;
+    background-color: var(--main-color);
+    box-shadow: 0 12px 12px var(--dimgray-color-text);
+    display: inline-flex;
+    padding: 6px;
+    font-size: 4rem;
+    color: var(--bg-color);
+    border-radius: .5rem;
+    z-index: 1000;
+    transition: bottom .4s, tranform .4s, background-color .4s;
+}
+
+.scrollup:hover{
+    transform: translateY(-.5rem);
+}
+
+/*=========Show Scroll up============*/
+.show-scroll{
+    bottom: 3.5rem;
 }
 
 /*Breakpoint - for phone view*/

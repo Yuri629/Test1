@@ -38,3 +38,13 @@ window.onscroll = () => {
     menuIcon.classList.remove('bx_x');
     navbar.classList.remove('active');
 }
+
+/*=========================Show Scroll Up===================*/
+const scrollUp = () =>{
+    const scrollUp = document.getElementById('scroll-up')
+    //when the scroll is higher than 350 viewport height, add show-scroll class to the tag with the scroll up class
+    this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
+                                                :scrollUp.classList.remove('show-scroll') 
+}
+
+window.addEventListener('scroll', scrollUp)
