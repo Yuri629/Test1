@@ -18,17 +18,35 @@ style and let it fix in the border box*/
 
 /*:root=set the whole html document in this color*/
 :root{
-    --bg-color: #ffffff;
-    --second-bg-color:#ff76d8;
-    --third-bg-color:#111111;
-    --text-color:#000000;
-    --main-color:#ff59c7;
-    --grey-color-text:#808080;
-    --dimgray-color-text: #696969;
+    --bg-color: hsla(360, 100%, 100%, 1);
+    --second-bg-color:hsla(317, 100%, 73%, 1);
+    --third-bg-color:hsla(360, 100%, 100%, 1);
+    /*for the text in contact change to pink color*/
+    --white-to-pink-text:hsla(360, 100%, 100%, 1);
+
+    --text-color:hsla(0, 0%, 7%, 1);
+    --main-color:hsla(320, 100%, 67%, 1);
+    --grey-color-text:hsla(0, 0%, 50%, 1);
+    --dimgray-color-text: hsla(0, 0%, 41%, 1);
 
     --margin-bottom-3: 3rem;
     --font-size-section-title: 5rem;
     --font-size-small-title: 2.5rem;
+}
+
+/*=================DARK THEME===================*/
+body.dark-theme{
+    --bg-color: hsla(0, 0%, 7%, 1);
+    --second-bg-color:hsla(317, 100%, 73%, 1);
+    /*for the text after hover in the porfolio card*/
+    --third-bg-color:hsla(360, 100%, 100%, 1);
+    /*for the text in contact change to pink color*/
+    --white-to-pink-text: hsla(360, 100%, 100%, 1);
+    --text-color:hsla(360, 100%, 100%, 1);
+    --main-color:hsla(320, 100%, 67%, 1);
+    --grey-color-text:hsla(0, 0%, 50%, 1);
+    --dimgray-color-text: hsla(0, 0%, 41%, 1);
+
 }
 
 /*html is use to change the px to rem.
@@ -57,7 +75,7 @@ body{
     left:0;
     width:100%;
     /*2rem is the height and the width is the 9%*/
-    padding:2rem 9%;
+    padding: 2rem 9%;
     background:transparent;
     /*make the website display flexible*/
     display:flex;
@@ -65,7 +83,7 @@ body{
     justify-content:space-between;
     align-items:center;
     /*the order of the element*/
-    z-index:100;
+    z-index: 100;
     transition: .3s;
 }
 
@@ -85,17 +103,41 @@ body{
     font-size:2.5rem;
     color: var(--text-color);
     font-weight: 600;
+    /******Maximise the right hand side margin of the topic*********/
+    margin-right: auto;
 }
 
+/*theme Icon*/
+#theme-button{
+    
+    font-size: 1.7rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+#theme-button:hover{
+    color: var(--main-color);
+}
 
 .navbar a {
+    position: relative;
     font-size:1.7rem;
     color:var(--text-color);
     font-weight: 500;
     /*margin-left is make the text at teh left hand side*/
-    margin-left: 3.5rem;
+    margin-right: 3.5rem;
     /*make the effect or the transition faster or in the time*/
     transition: 0.5s;
+}
+
+.navbar a.active::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: .2rem;
+
 }
 
 /*when the class of the link is active, use a.active
@@ -117,9 +159,7 @@ if it not as a class and it is an action like hover,use a:hover*/
 /*important to fix the margin and padding of 
 every section*/
 section{
-    /*vh = view height*/
-    min-height: 100vh;
-    padding: 2rem 0 4rem;
+    padding: 10rem 20rem ;
     display: block;
 }
 
@@ -130,7 +170,7 @@ section{
     right:2vh;
     /* padding for 2 value is top and bottom and 
     right and left*/
-    padding:0 9%;
+    
     /*background image*/
     /*must use ("../assets/download.png") in github*/
     /*background-image: url("../assets/download.png");
@@ -140,7 +180,7 @@ section{
 
 .home-content{
     
-    max-width:60rem;
+    max-width: 60rem;
 }
 
 
@@ -173,15 +213,18 @@ is under home-content*/
 }
 
 .home-img{
-    display: flex;
-    justify-content: flex-end;
+    display:flex;
+    justify-items: center;
     align-items: center;
+    /*make the photo float to the right*/
+    margin-left: auto;
+    
+    
 }
 
 .home-img img{
-
     position: relative;
-    margin: 0 3rem 0 15rem;
+    
     width: 50vh;
     pointer-events: none;
     border-radius: 5rem;
@@ -269,10 +312,15 @@ with the same class= 'btn'*/
 }
 
 .home-sci{
-    position:absolute;
-    bottom: 4rem;
-    width: 170px;
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    bottom: 0;
+    height: 150px;
+    margin-right: 2rem;
+    
     justify-content: space-between;
 
 }
@@ -285,8 +333,8 @@ with the same class= 'btn'*/
     width: 40px;
     height: 40px;
     background: transparent;
-    font-size: 2rem;
-    border: .2rem solid var(--main-color);
+    font-size: 2.5rem;
+    
     /*border radius=50% can make the button become circus*/
     border-radius: .8rem;
     color: var(--main-color);
@@ -332,9 +380,10 @@ span{
 /*this is second section, and put justify center and 
 align-items center will be better*/
 .about-img{
-
-    width: 60vh;
-    height: 40vh;
+    display: flex;
+    justify-content: flex-start;
+    width: 80vh;
+    height: 50vh;
     border: 2rem;
     filter: drop-shadow(1px 1px 1px var(--main-color));
     transition: .3s;
@@ -365,30 +414,25 @@ align-items center will be better*/
 
 /*button of about me*/
 .button{
-    display: inline-flex;
-    margin-top: 1.5rem;
-    align-items: center;
-    border-radius: .5rem;
     padding: 1.3rem;
-
     font-size: 1.5rem;
     font-weight: 500;
-
-    color: var(--bg-color);
-    background-color: var(--main-color);
 }
 
 /*glow of the button*/
 .button-about{
-    justify-content: center;
+    display: flex;
+    flex-direction: row;
     margin-top: 3rem;
+    justify-content: space-between;
+    width: 350px;
+    
 }
 
 
 .button-resume{
     align-items: center;
     outline: none;
-    margin-left: 5rem;
     cursor: pointer;
     position: relative;
     z-index: 0;
@@ -689,6 +733,7 @@ and the 0, -6px.....is the value of the movement*/
     /*keep the size of the box and make it fix in the section
     and it will function when display:flex written*/
     flex-wrap: wrap;
+    margin: 0 ;
 }
 
 .portfolio-container .card{
@@ -774,7 +819,7 @@ and the 0, -6px.....is the value of the movement*/
 /*the hover action of the icon of the front card*/
 .portfolio-container .card:hover .face.face1 .content i{
 
-    color: var(--bg-color);
+    color: var(--third-bg-color);
 }
 
 /*the title of the front card*/
@@ -787,7 +832,7 @@ and the 0, -6px.....is the value of the movement*/
 /*the hover action of the title of the front card*/
 .portfolio-container .card:hover .face.face1 .content h3{
 
-    color: var(--bg-color);
+    color: var(--third-bg-color);
 }
 
 /*the design of the back card*/
@@ -866,7 +911,7 @@ and the 0, -6px.....is the value of the movement*/
     padding: 1rem;
     border-radius: .5rem;
     text-align: center;
-    color: var(--bg-color);
+    color: var(--third-bg-color);
     font-size: 1.5rem;
     transition: .3s;
     cursor: pointer;
@@ -878,7 +923,7 @@ and the 0, -6px.....is the value of the movement*/
 }
 
 .content-card span{
-    color: var(--bg-color);
+    color: var(--third-bg-color);
 }
 
 .contact-card:hover{
@@ -1035,7 +1080,7 @@ textarea.input{
 /*=====Submit button======*/
 .contact_button1{
     display: flex;
-    color: var(--bg-color);
+    color: var(--third-bg-color);
     background-color: var(--main-color);
     padding: .8rem;
     width: 15rem;
@@ -1068,14 +1113,14 @@ textarea.input{
 /*==================FOOTER=================*/
 .footer{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding: 2rem 9%;
     background-color: var(--main-color);
     width: 100vw;
     padding-top: 40px;
-    color: var(--bg-color);
+    color: var(--third-bg-color);
 }
 
 .footer_container{
@@ -1091,6 +1136,7 @@ textarea.input{
     font-weight: 800;
     text-transform: capitalize;
     line-height: 3rem;
+    color: var(--third-bg-color);
 }
 
 .footer_content{
@@ -1110,12 +1156,13 @@ textarea.input{
 }
 
 .footer_links a{
+    color: var(--third-bg-color);
     font-size: 1.6rem;
 }
 
 .footer_links a:hover{
     text-decoration: underline;
-    color: #000000;
+    color: var(--third-bg-color);
 }
 
 .footer_social{
@@ -1132,7 +1179,7 @@ textarea.input{
 
 .footer_social a{
     text-decoration: none;
-    color: var(--bg-color);
+    color: var(--third-bg-color);
 }
 
 .footer_social a i{
@@ -1164,7 +1211,7 @@ textarea.input{
     text-transform: uppercase;
     opacity: .8;
     font-weight: 500;
-    color: var(--bg-color);
+    color: var(--text-color);
 
 }
 
@@ -1176,6 +1223,7 @@ textarea.input{
 
 ::-webkit-scrollbar-thumb{
     background-color: var(--main-color);
+    border: 2px solid var(--bg-color);
 }
 
 ::-webkit-scrollbar-thumb:hover{
@@ -1207,7 +1255,72 @@ textarea.input{
     bottom: 3.5rem;
 }
 
-/*Breakpoint - for phone view*/
+/*======================Breakpoint - for phone view============================*/
+/*For small devices*/
+
+/*For medium devices*/
+@media (max-width: 520px){
+    html{
+        font-size: 50%;
+    }
+
+    .home-content h1{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-sci{
+        width: 160px;
+    }
+
+    .home-sci a{
+        width: 38px;
+        height: 38px;
+    }
+    /*the margin of the theme-button*/
+    #theme-button{
+        margin-left: 3.5rem;
+    }
+}
+
+@media (max-width: 462px){
+    .home-content h1{
+        font-size: 5.2rem;
+    }
+
+    .education-row{
+        padding: 10rem 4% 5rem 5%;
+    }
+
+    .contact-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .contact-info{
+        margin-bottom: 2rem;
+    }
+    
+    .contact-container form .input-container .input{
+        width: 100%;
+    }
+
+    /*the margin of the theme-button*/
+    #theme-button{
+        margin-left: 3.5rem;
+    }
+
+    /*.footer_container{
+        flex-direction: column-reverse;
+    }
+    .footer_container a{
+        margin-top: 2rem;
+    }*/
+}
+
+/*For large devices*/
 @media (max-width: 1200px){
     html{
         font-size: 55%;
@@ -1215,9 +1328,6 @@ textarea.input{
 }
 
 @media (max-width: 991px){
-    section{
-        padding: 10rem 4% 2rem;
-    }
 
     .home{
         padding: 0 4%;
@@ -1225,10 +1335,6 @@ textarea.input{
 }
 
 @media (max-width: 768px){
-
-    section{
-        padding: 10rem 4% 2rem;
-    }
 
     .home{
         padding: 0 4%;
@@ -1245,7 +1351,7 @@ textarea.input{
     .navbar{
         position: absolute;
         top: 100%;
-        left: -100%;
+        left: -500%;
         width: 100%;
         padding: 1rem 4%;
         background-color: var(--bg-color);
@@ -1265,7 +1371,7 @@ textarea.input{
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 500%;
         height: 100%;
         background:var(--text-color);
         border-top: .1rem solid var(--text-color);
@@ -1297,56 +1403,13 @@ textarea.input{
         transform: translateX(0);
         transition-delay: .15s;
     }
-}
 
-@media (max-width: 520px){
-    html{
-        font-size: 50%;
-    }
-
-    .home-content h1{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .home-sci{
-        width: 160px;
-    }
-
-    .home-sci a{
-        width: 38px;
-        height: 38px;
-    }
-}
-
-@media (max-width: 462px){
-    .home-content h1{
-        font-size: 5.2rem;
-    }
-
-    .education-row{
-        padding: 10rem 4% 5rem 5%;
-    }
-
-    .contact-container{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .contact-info{
-        margin-bottom: 2rem;
+    /*the margin of the theme-button*/
+    #theme-button{
+        margin-left: 3.5rem;
     }
     
-    .contact-container form .input-container .input{
-        width: 100%;
-    }
-
-    /*.footer_container{
-        flex-direction: column-reverse;
-    }
-    .footer_container a{
-        margin-top: 2rem;
-    }*/
 }
+
+
+/*For 2k resolution (2048 x 1152, 2048 x 1536*/

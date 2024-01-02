@@ -36,13 +36,20 @@
         <a href="#skills">Skills</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
-
+        
+        
         <div class="active-nav"></div>
     </nav>
+    <div class="bx bx-moon" id="theme-button"></div>
 </header>
 
 <!--home section design-->
-<section class="home" id="home">
+<section class="home" id="home"> 
+    <div class="home-sci">
+        <a href="https://github.com/Yuri629" target="_blank"><i class='bx bxl-github' ></i></a>
+        <a href="https://www.linkedin.com/in/ng-man-teng-0a625123a/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://wa.link/qa66ve" target="_blank"><i class='bx bxl-whatsapp' ></i></a>
+    </div>
     <div class="home-content">
         <h1>Hi, I'm <span>Ng Man Teng</span></h1>
         <div class="text-animate">
@@ -69,11 +76,6 @@
         <img src="assets/download.png" alt="image of Ng Man Teng">
     </div>
 
-    <div class="home-sci">
-        <a href="https://github.com/Yuri629" target="_blank"><i class='bx bxl-github' ></i></a>
-        <a href="https://www.linkedin.com/in/ng-man-teng-0a625123a/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-        <a href="https://wa.link/qa66ve" target="_blank"><i class='bx bxl-whatsapp' ></i></a>
-    </div>
 
 </section>
 
@@ -93,14 +95,12 @@
             <br>I hope to leveraging my technical skills,learn some new skills and gain some experiences to improve myself and show my value to the company. 
             </p>
                 <div class="button-about">
-                    <div>
-                        <a download="" href="resume/NG MAN TENG_RESUME.docx" class=" button button-resume" >
-                            Download Resume <i class='bx bx-file'></i>
-                        </a>
-                        <a href="#portfolio" alt="portfolio" class="button button-resume">
-                            Portfolio <i class='bx bxs-box'></i>
-                        </a>
-                    </div>
+                    <a download="" href="resume/NG MAN TENG_RESUME.docx" class=" button button-resume" >
+                        Download Resume <i class='bx bx-file'></i>
+                    </a>
+                    <a href="#portfolio" alt="portfolio" class="button button-resume">
+                        Portfolio <i class='bx bxs-box'></i>
+                    </a>
                 </div>
         </div>
     </div>
@@ -380,7 +380,7 @@
         <div class="contact-content">
             <div class="contact-info">
 
-                <a href="mailto:manteng629@gmailcom">
+                <a href="mailto:manteng629@gmailcom"target="_blank">
                     <div class="contact-card">
                         <!--can add other name of class at the back of the icon name 
                         that get from Box Icon-->
@@ -393,7 +393,7 @@
                     </div>
                 </a>
             
-                <a href="https://wa.link/qa66ve">
+                <a href="https://wa.link/qa66ve" target="_blank">
                     <div class="contact-card">
                         <i class='bx bxl-whatsapp contact-card-icon' ></i>
                         <h3 class="contact_card-title">WhatsApp</h3>
@@ -404,7 +404,7 @@
                     </div>
                 </a>
                 
-                <a href="https://www.linkedin.com/in/ng-man-teng-0a625123a/">
+                <a href="https://www.linkedin.com/in/ng-man-teng-0a625123a/" target="_blank">
                     <div class="contact-card">
                         <i class='bx bxl-linkedin contact-card-icon' ></i>
                         <h3 class="contact_card-title">Linkedin</h3>
@@ -515,13 +515,10 @@
 <!--==============Email JS=================-->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-<!--==============Contact input JavaScript==============-->
-    <script src="js/script.js"></script>
-
-<!--==============Contact JavaScript send message to email=======-->
+<!--==============Contact JavaScript input and send message to email=======-->
     <script src="js/Contact-Send-email.js"></script>
 
 <!--===============Animation of page JavaScript===================-->
-<script src="js/animation-of-the-page.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
