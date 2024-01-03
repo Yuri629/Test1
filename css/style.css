@@ -179,8 +179,10 @@ section{
 }
 
 .home-content{
-    
-    max-width: 60rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: initial;
+    max-width: 58rem;
 }
 
 
@@ -197,19 +199,87 @@ is under home-content*/
     position: relative;
     width: 32.8rem;
 }
+
+/*MAKE THE ANIMATION OF THE TEXT USING KEYFRAME*/   
 .home-content .text-animate h3{
-    font-size:3.2rem;
+    font-size: 3.2rem;
     font-weight: 700;
-    color:transparent;
+    color: transparent;
     /*make a stroke/outline for the text*/
     -webkit-text-stroke: 1px var(--main-color);
+    /*make a linear gradient color for the text*/
+    background-image: linear-gradient(135deg, var(--main-color),var(--text-color));
+    /*dont repeat the pic*/
+    background-repeat: no-repeat;
+    /*make the background color fit into the text*/
+    -webkit-background-clip: text;
+    /*fix the position of the background position*/
+    background-position: 0 0;
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 2s;
+}
+
+/*MAKE THE ANIMATION OF THE LINE USING KEYFRAME*/  
+/*the line moving to change the color of the tet*/
+.home-content .text-animate h3::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 2px solid var(--main-color) ;
+    z-index: -1;
+    animation:  homeCursorText 6s linear infinite;
+    animation-delay: 2s;
+}
+
+/*KEYFRAMES ANIMATION*/
+/*animation of the bg color of the text*/
+@keyframes homeBgText{
+    /* Move forward from -33rem(x-axis) 0(y-axis) when it keyframe 0% and
+    back to -33,0 when keyframe 100%*/
+    0%,
+    10%,
+    100% {
+        background-position: -33rem 0;
+    }  
+
+    /*65% need to reach to 0,0, and until 85% is the time to hold*/
+    65%,
+    85%{
+        background-position: 0 0;
+    }
+}
+
+/*animation of the line that moving to change the color of the text*/
+@keyframes homeCursorText{
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }  
+
+    65%,
+    85%{
+        width: 100%;
+        opacity: 1;
+    }
+
+    75%,
+    81%{
+        opacity: 0;
+    }
 }
 
 .home-content p{
+    display: flex;
+    flex-direction: column;
+    justify-content: initial;
     font-size: 1.6rem;
     /*if margin have four value, it will be top, right,bottom and left
     if margin just 3 value,it will be top, right and left, bottom*/
-    margin: 2rem 0 4rem;
+    margin: 2rem 3rem 4rem 0;
 }
 
 .home-img{
@@ -217,14 +287,14 @@ is under home-content*/
     justify-items: center;
     align-items: center;
     /*make the photo float to the right*/
-    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
     
     
 }
 
 .home-img img{
     position: relative;
-    
     width: 50vh;
     pointer-events: none;
     border-radius: 5rem;
@@ -238,6 +308,7 @@ is under home-content*/
     justify-content: space-between;
     width: 34.5rem;
     height: 5rem;
+    
 }
 
 /*animation of button must have ori,hover, before,
@@ -1257,6 +1328,29 @@ textarea.input{
 
 /*======================Breakpoint - for phone view============================*/
 /*For small devices*/
+@media screen and (max-width: 320px) {
+    .home{
+        grid-template-columns: 0.5fr 3fr;
+        display: grid;
+        padding-top: 3.5rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-img img{
+        display: flex;
+        width: 40vh;
+        align-items: center;
+        text-align: center;
+        margin-top: 8rem;
+    }
+    
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+}
 
 /*For medium devices*/
 @media (max-width: 520px){
@@ -1265,8 +1359,7 @@ textarea.input{
     }
 
     .home-content h1{
-        display: flex;
-        flex-direction: column;
+        font-size: 5.2rem;
     }
 
     .home-sci{
