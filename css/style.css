@@ -62,6 +62,7 @@ html{
 }
 
 body{
+    margin: 0 0 3rem 0;
     background: var(--bg-color);
     color:var(--text-color);
 }
@@ -159,30 +160,94 @@ if it not as a class and it is an action like hover,use a:hover*/
 /*important to fix the margin and padding of 
 every section*/
 section{
-    padding: 10rem 20rem ;
-    display: block;
+    padding: 20rem 20rem;
+    /*display: block;*/
 }
 
-.home{
-    display:flex;
-    align-items:center;
-    top: 0 ;
-    right:2vh;
-    /* padding for 2 value is top and bottom and 
-    right and left*/
+.home-container{
+    gap: 1rem;
+}
+
+.grid{
+    display: grid;
+    gap: 1.5rem;
+}
+
+
+.home-contentLead{
+   grid-template-columns: 0.5fr 3fr;
+   padding-top: 3.5rem;
+   align-items: center;
+}
+
+
+.home-sci{
+    display: grid;
+    grid-template-columns: max-content;
+    row-gap: 1rem;
+    /*flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    bottom: 0;
+    height: 150px;
+    margin-right: 2rem;*/
+
+}
+
+.home-sci a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background: transparent;
+    font-size: 3rem;
     
-    /*background image*/
-    /*must use ("../assets/download.png") in github*/
-    /*background-image: url("../assets/download.png");
-    background-repeat: no-repeat;
-    background-size:30%;*/
+    /*border radius=50% can make the button become circus*/
+    border-radius: .8rem;
+    color: var(--main-color);
+    z-index: 1;
+    transition: .3s;
+    overflow: hidden;
 }
 
-.home-content{
+.home-sci a:hover{
+    color: var(--bg-color);
+    background-color: var(--main-color);
+}
+
+.home-sci a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.home-sci a:hover::before{
+    width: 100%;
+
+}
+
+.home-img{
     display: flex;
-    flex-direction: column;
-    justify-content: initial;
-    max-width: 58rem;
+    justify-content: center;
+}
+
+.home-img img{
+    width: 300px;
+    pointer-events: none;
+    border-radius: 5rem;
+    
+}
+
+/* it wont be use in here when the screen width is 768px and up
+it will be use when it is too small*/
+.home-content{
+    grid-column: 1/3;
 }
 
 
@@ -282,24 +347,6 @@ is under home-content*/
     margin: 2rem 3rem 4rem 0;
 }
 
-.home-img{
-    display:flex;
-    justify-items: center;
-    align-items: center;
-    /*make the photo float to the right*/
-    margin-right: auto;
-    margin-top: auto;
-    
-    
-}
-
-.home-img img{
-    position: relative;
-    width: 50vh;
-    pointer-events: none;
-    border-radius: 5rem;
-}
-
 /*button*/
 /*the whole condition of the linkedln,github and whatapp*/ 
 .btn-box{
@@ -380,59 +427,6 @@ animate the transition or effect of the button*/
 with the same class= 'btn'*/
 .btn-box .btn:nth-child(2):hover{
     color: var(--bg-color);
-}
-
-.home-sci{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    bottom: 0;
-    height: 150px;
-    margin-right: 2rem;
-    
-    justify-content: space-between;
-
-}
-
-.home-sci a{
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    font-size: 2.5rem;
-    
-    /*border radius=50% can make the button become circus*/
-    border-radius: .8rem;
-    color: var(--main-color);
-    z-index: 1;
-    transition: .3s;
-    overflow: hidden;
-}
-
-.home-sci a:hover{
-    color: var(--bg-color);
-    background-color: var(--main-color);
-}
-
-.home-sci a::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-}
-
-.home-sci a:hover::before{
-    width: 100%;
-
 }
 
 
@@ -1328,21 +1322,16 @@ textarea.input{
 
 /*======================Breakpoint - for phone view============================*/
 /*For small devices*/
-@media screen and (max-width: 320px) {
-    .home{
-        grid-template-columns: 0.5fr 3fr;
-        display: grid;
-        padding-top: 3.5rem;
-        align-items: center;
-        text-align: center;
+@media screen and (max-width: 300px) {
+
+    section{
+        padding: 10rem 15rem;
     }
 
-    .home-img img{
-        display: flex;
-        width: 40vh;
+    .home-contentLead{
+        grid-template-columns: 0.25fr 3fr;
+        padding-top: 3.5rem;
         align-items: center;
-        text-align: center;
-        margin-top: 8rem;
     }
     
 
@@ -1352,8 +1341,45 @@ textarea.input{
 
 }
 
+@media screen and (min-width: 320px) {
+
+    section{
+        padding: 2rem 2rem;
+    }
+
+    .home-contentLead{
+        grid-template-columns: 0.25fr 3fr;
+        padding-top: 3.5rem;
+        align-items: center;
+    }
+    
+    .home-content{
+        grid-column: initial;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+}
+
 /*For medium devices*/
-@media (max-width: 520px){
+@media screen and (min-width: 568px){
+
+    section{
+        padding: 5rem 3rem;
+    }
+
+    .home-contentLead{
+        grid-template-columns: max-content 1fr 1fr;
+        padding-top: 3.5rem;
+        align-items: center;
+    }
+
+    .home-content{
+        grid-column: initial;
+    }
+
     html{
         font-size: 50%;
     }
@@ -1362,21 +1388,31 @@ textarea.input{
         font-size: 5.2rem;
     }
 
-    .home-sci{
-        width: 160px;
-    }
-
-    .home-sci a{
-        width: 38px;
-        height: 38px;
-    }
     /*the margin of the theme-button*/
     #theme-button{
-        margin-left: 3.5rem;
+        margin-left: -3.5rem;
     }
 }
 
-@media (max-width: 462px){
+@media screen and (min-width: 768px){
+    section{
+        padding: 5rem 3rem;
+    }
+
+    .home-contentLead{
+        
+        padding-top: 5.5rem;
+        column-gap: 2rem;
+    }
+
+    .home-content{
+        grid-column: initial;
+    }
+
+    .home-content h1{
+        font-size: 5.2rem;
+    }
+
     .home-content h1{
         font-size: 5.2rem;
     }
@@ -1414,24 +1450,24 @@ textarea.input{
 }
 
 /*For large devices*/
-@media (max-width: 1200px){
+@media screen and (min-width: 1200px){
     html{
         font-size: 55%;
     }
 }
 
-@media (max-width: 991px){
+@media screen and (min-width: 991px){
 
-    .home{
-        padding: 0 4%;
+    section{
+        padding: 10rem 10rem;
     }
 }
 
+
+/*===============display the list of the navigate Bar until 
+                 screen width 768px==============*/
 @media (max-width: 768px){
 
-    .home{
-        padding: 0 4%;
-    }
 
     .header{
         background-color: var(--bg-color);
