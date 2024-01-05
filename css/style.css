@@ -28,6 +28,7 @@ style and let it fix in the border box*/
     --main-color:hsla(320, 100%, 67%, 1);
     --grey-color-text:hsla(0, 0%, 50%, 1);
     --dimgray-color-text: hsla(0, 0%, 41%, 1);
+    --portfolio-back-side-bg-color: #333;
 
     --margin-bottom-3: 3rem;
     --font-size-section-title: 5rem;
@@ -46,6 +47,7 @@ body.dark-theme{
     --main-color:hsla(320, 100%, 67%, 1);
     --grey-color-text:hsla(0, 0%, 50%, 1);
     --dimgray-color-text: hsla(0, 0%, 41%, 1);
+    --portfolio-back-side-bg-color: hsla(360, 100%, 100%, 1);
 
 }
 
@@ -75,6 +77,8 @@ body{
     top:0;
     left:0;
     width:100%;
+
+    margin-bottom: 1.5rem;
     /*2rem is the height and the width is the 9%*/
     padding: 2rem 9%;
     background:transparent;
@@ -160,17 +164,19 @@ if it not as a class and it is an action like hover,use a:hover*/
 /*important to fix the margin and padding of 
 every section*/
 section{
-    padding: 20rem 20rem;
-    /*display: block;*/
-}
-
-.home-container{
-    gap: 1rem;
+    padding: 15rem 20rem;
+    display: block;
 }
 
 .grid{
     display: grid;
-    gap: 1.5rem;
+    gap: 3rem;
+}
+
+.container{
+
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }
 
 
@@ -235,10 +241,11 @@ section{
 .home-img{
     display: flex;
     justify-content: center;
+    margin-right: 2rem;
 }
 
 .home-img img{
-    width: 300px;
+    width: 350px;
     pointer-events: none;
     border-radius: 5rem;
     
@@ -344,7 +351,7 @@ is under home-content*/
     font-size: 1.6rem;
     /*if margin have four value, it will be top, right,bottom and left
     if margin just 3 value,it will be top, right and left, bottom*/
-    margin: 2rem 3rem 4rem 0;
+    margin: 2rem 0 4rem 0;
 }
 
 /*button*/
@@ -446,10 +453,10 @@ span{
 align-items center will be better*/
 .about-img{
     display: flex;
-    justify-content: flex-start;
-    width: 80vh;
-    height: 50vh;
-    border: 2rem;
+    
+    width: 400px;
+    
+    
     filter: drop-shadow(1px 1px 1px var(--main-color));
     transition: .3s;
 }
@@ -459,21 +466,15 @@ align-items center will be better*/
     cursor: pointer;
 }
 
-/*set the css of the container of about me section*/
-.about-container{
-    display: flex ;
-    align-items: center;
-    justify-content: center;
-}
 
 .about-description{
     display: flex;
-    justify-content: flex-end;
+    
     flex-direction: column;
     align-items: center;
     font-size: 1.6rem;
     text-align: initial;
-    margin-top: 10rem;
+   
     
 }
 
@@ -490,7 +491,7 @@ align-items center will be better*/
     flex-direction: row;
     margin-top: 3rem;
     justify-content: space-between;
-    width: 350px;
+    width: 300px;
     
 }
 
@@ -903,7 +904,7 @@ and the 0, -6px.....is the value of the movement*/
 /*the design of the back card*/
 .portfolio-container .card .face.face2{
     position: relative;
-    background: #333;
+    background: var(--portfolio-back-side-bg-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1322,7 +1323,7 @@ textarea.input{
 
 /*======================Breakpoint - for phone view============================*/
 /*For small devices*/
-@media screen and (max-width: 300px) {
+@media screen and (min-width: 300px) {
 
     section{
         padding: 10rem 15rem;
@@ -1361,15 +1362,31 @@ textarea.input{
         font-size: 5rem;
     }
 
+    /*=========ABOUT SECTION==============*/
+    .about-containerIn{
+        display: grid;
+        align-items: center;
+        grid-template-columns: 0.5fr 3fr;
+    }
+
+    .about-img{
+        width: 300px;
+    }
+
 }
 
-/*For medium devices*/
+/*==============For medium devices=================*/
 @media screen and (min-width: 568px){
+    
+    html{
+        font-size: 50%;
+    }
 
     section{
         padding: 5rem 3rem;
     }
 
+    /*======HOME SECTION======*/
     .home-contentLead{
         grid-template-columns: max-content 1fr 1fr;
         padding-top: 3.5rem;
@@ -1379,13 +1396,33 @@ textarea.input{
     .home-content{
         grid-column: initial;
     }
-
-    html{
-        font-size: 50%;
-    }
-
+    
     .home-content h1{
         font-size: 5.2rem;
+    }
+
+    .home-img img{
+        width: 300px;
+    }
+
+    /*=========ABOUT SECTION==============*/
+    .about-containerIn{
+        display: grid;
+        align-items: center;
+        grid-template-columns: max-content 1fr 1fr;
+    }
+
+    .about-img{
+        width: 300px;
+    }
+
+    /*========CONTACT SECTION======*/
+    .contact-container{
+        display: grid;
+        grid-template-rows: max-content 1fr 1fr;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
     }
 
     /*the margin of the theme-button*/
@@ -1394,11 +1431,13 @@ textarea.input{
     }
 }
 
+/*==========MIN SCREEN 768PX============*/
 @media screen and (min-width: 768px){
     section{
         padding: 5rem 3rem;
     }
 
+    /*========HOME SECTION===========*/
     .home-contentLead{
         
         padding-top: 5.5rem;
@@ -1417,15 +1456,20 @@ textarea.input{
         font-size: 5.2rem;
     }
 
-    .education-row{
-        padding: 10rem 4% 5rem 5%;
+    /*=========ABOUT SECTION==============*/
+    .about-containerIn{
+        display: grid;
+        align-items: center;
+        grid-template-columns: max-content 1fr 1fr;
     }
 
-    .contact-container{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
+    .about-img{
+        width: 300px;
+    }
+
+    /*========EDUCATION SECTION===========*/
+    .education-row{
+        padding: 10rem 4% 5rem 5%;
     }
 
     .contact-info{
@@ -1454,12 +1498,27 @@ textarea.input{
     html{
         font-size: 55%;
     }
+
+    /*==========Home Section==============*/
+    .home-img img{
+        width: 400px;
+    }
+
+    /*=========About Me Section============*/
+    .about-description{
+        grid-column: initial ;
+    }
 }
 
 @media screen and (min-width: 991px){
 
     section{
-        padding: 10rem 10rem;
+        padding: 10rem 20rem;
+        
+    }
+
+        .home-img img{
+        width: 300px;
     }
 }
 
