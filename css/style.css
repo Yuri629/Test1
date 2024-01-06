@@ -56,18 +56,30 @@ As 62.5% of the default font size is 16px, in rem is 16/10.
 For example, 1.6rem will have a 16px rendering (16/10=1.6).*/ 
 html{
     font-size: 62.5%;
-    /*overflow-x is to clip the content or add a scroll bar*/
-    /*clip the content when the overflow st the left or right edges*/
-    overflow-x:hidden ;
+
     /*jump to the page by scrolling smooth*/
     scroll-behavior: smooth;
 }
+
 
 body{
     margin: 0 0 3rem 0;
     background: var(--bg-color);
     color:var(--text-color);
 }
+
+/*!!!!!USE TO SOLVE THE RIGHT BLANK SPACE PROBLEM
+    WHEN CHANGING THE WIDTH OF THE SCREEN*/
+    html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /*overflow-x is to clip the content or add a scroll bar*/
+    /*clip the content when the overflow st the left or right edges*/
+    overflow-x: hidden;
+} 
+
 
 /*class=header navbar*/
 .header{
@@ -77,16 +89,12 @@ body{
     top:0;
     left:0;
     width:100%;
+    padding: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    margin-bottom: 1.5rem;
-    /*2rem is the height and the width is the 9%*/
-    padding: 2rem 9%;
-    background:transparent;
-    /*make the website display flexible*/
-    display:flex;
-    /*make the element have space between*/
-    justify-content:space-between;
-    align-items:center;
     /*the order of the element*/
     z-index: 100;
     transition: .3s;
@@ -110,18 +118,6 @@ body{
     font-weight: 600;
     /******Maximise the right hand side margin of the topic*********/
     margin-right: auto;
-}
-
-/*theme Icon*/
-#theme-button{
-    
-    font-size: 1.7rem;
-    color: var(--text-color);
-    cursor: pointer;
-}
-
-#theme-button:hover{
-    color: var(--main-color);
 }
 
 .navbar a {
@@ -152,6 +148,18 @@ if it not as a class and it is an action like hover,use a:hover*/
     color:var(--main-color);
 }
 
+/*theme Icon*/
+#theme-button{
+    margin-left: .5rem;
+    font-size: 1.7rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+#theme-button:hover{
+    color: var(--main-color);
+}
+
 /*================VISIBLE NAVBAR FOR MOBILE=============*/
 /*menu icon = display is none, so it unvisible*/
 #menu-icon{
@@ -164,19 +172,19 @@ if it not as a class and it is an action like hover,use a:hover*/
 /*important to fix the margin and padding of 
 every section*/
 section{
-    padding: 15rem 20rem;
-    display: block;
+    padding: 2rem 0 4rem;
+    
 }
 
 .grid{
     display: grid;
-    gap: 3rem;
+    gap: 1rem;
 }
 
 .container{
-
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    max-width: 768px;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 
@@ -245,7 +253,7 @@ section{
 }
 
 .home-img img{
-    width: 350px;
+    width: 200px;
     pointer-events: none;
     border-radius: 5rem;
     
@@ -345,13 +353,10 @@ is under home-content*/
 }
 
 .home-content p{
-    display: flex;
-    flex-direction: column;
-    justify-content: initial;
     font-size: 1.6rem;
     /*if margin have four value, it will be top, right,bottom and left
     if margin just 3 value,it will be top, right and left, bottom*/
-    margin: 2rem 0 4rem 0;
+    margin: 2rem 1rem 4rem 0;
 }
 
 /*button*/
@@ -360,7 +365,7 @@ is under home-content*/
     position:relative;
     display: flex;
     justify-content: space-between;
-    width: 34.5rem;
+    width: 31.5rem;
     height: 5rem;
     
 }
@@ -1323,7 +1328,7 @@ textarea.input{
 
 /*======================Breakpoint - for phone view============================*/
 /*For small devices*/
-@media screen and (min-width: 300px) {
+/*@media screen and (min-width: 300px) {
 
     section{
         padding: 10rem 15rem;
@@ -1340,26 +1345,17 @@ textarea.input{
         font-size: 5rem;
     }
 
-}
+}*/
 
 @media screen and (min-width: 320px) {
 
-    section{
-        padding: 2rem 2rem;
-    }
-
-    .home-contentLead{
-        grid-template-columns: 0.25fr 3fr;
-        padding-top: 3.5rem;
-        align-items: center;
-    }
-    
-    .home-content{
-        grid-column: initial;
-    }
-
+    /*=========HOME SECTION==============*/
     .home-content h1{
-        font-size: 5rem;
+        font-size: 4rem;
+    }
+
+    .home-img img{
+        width: 250px;
     }
 
     /*=========ABOUT SECTION==============*/
@@ -1370,7 +1366,7 @@ textarea.input{
     }
 
     .about-img{
-        width: 300px;
+        width: 250px;
     }
 
 }
@@ -1378,19 +1374,16 @@ textarea.input{
 /*==============For medium devices=================*/
 @media screen and (min-width: 568px){
     
+    /*Whole padding of the website*/
     html{
         font-size: 50%;
     }
 
-    section{
-        padding: 5rem 3rem;
-    }
 
     /*======HOME SECTION======*/
     .home-contentLead{
         grid-template-columns: max-content 1fr 1fr;
-        padding-top: 3.5rem;
-        align-items: center;
+        
     }
 
     .home-content{
@@ -1398,11 +1391,11 @@ textarea.input{
     }
     
     .home-content h1{
-        font-size: 5.2rem;
+        font-size: 4rem;
     }
 
     .home-img img{
-        width: 300px;
+        width: 250px;
     }
 
     /*=========ABOUT SECTION==============*/
@@ -1427,17 +1420,40 @@ textarea.input{
 
     /*the margin of the theme-button*/
     #theme-button{
-        margin-left: -3.5rem;
+        margin-left: .5rem;
     }
 }
 
 /*==========MIN SCREEN 768PX============*/
 @media screen and (min-width: 768px){
-    section{
-        padding: 5rem 3rem;
+
+    /*header and the whole padding of the website*/
+    html{
+        font-size: 50%;
     }
 
+    .section{
+        padding:6rem 0 2rem;
+    }
+
+    .header,
+    .footer_container{
+        padding: 3rem;
+    }
+
+    .header{
+        top: 0;
+        bottom: initial;
+    }
+    
+
     /*========HOME SECTION===========*/
+
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .home-contentLead{
         
         padding-top: 5.5rem;
@@ -1454,6 +1470,10 @@ textarea.input{
 
     .home-content h1{
         font-size: 5.2rem;
+    }
+
+    .home-img img{
+        width: 250px;
     }
 
     /*=========ABOUT SECTION==============*/
@@ -1482,7 +1502,7 @@ textarea.input{
 
     /*the margin of the theme-button*/
     #theme-button{
-        margin-left: 3.5rem;
+        margin-left: .5rem;
     }
 
     /*.footer_container{
@@ -1494,7 +1514,15 @@ textarea.input{
 }
 
 /*For large devices*/
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1024px){
+    
+    /*header and the footer container*/
+    .header,
+    .footer_container{
+        padding: 3rem;
+    }
+
+
     html{
         font-size: 55%;
     }
@@ -1512,15 +1540,14 @@ textarea.input{
 
 @media screen and (min-width: 991px){
 
-    section{
-        padding: 10rem 20rem;
-        
-    }
-
-        .home-img img{
-        width: 300px;
-    }
+.home-img img{
+    width: 300px;
 }
+}
+
+
+
+
 
 
 /*===============display the list of the navigate Bar until 
