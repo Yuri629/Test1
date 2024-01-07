@@ -453,14 +453,12 @@ span{
     color: var(--main-color);
 }
 
+/*===============ABOUT SECTION===============*/
 /*about image*/
 /*this is second section, and put justify center and 
 align-items center will be better*/
 .about-img{
-    display: flex;
-    
-    width: 400px;
-    
+    width: 300px;
     
     filter: drop-shadow(1px 1px 1px var(--main-color));
     transition: .3s;
@@ -471,32 +469,44 @@ align-items center will be better*/
     cursor: pointer;
 }
 
+.about-containerIn{
+    display: grid;
+    align-items: center;
+    grid-template-columns: max-content 1fr;
+}
+
+
+.about-container{
+    display: grid;
+    justify-content: center;
+}
 
 .about-description{
-    display: flex;
-    
-    flex-direction: column;
-    align-items: center;
     font-size: 1.6rem;
     text-align: initial;
+    grid-column: 1/3;
    
-    
+}
+
+.about-description p{
+    font-size: 1.6rem;
+    margin: 2rem 1rem 4rem 0;
 }
 
 /*button of about me*/
 .button{
     padding: 1.3rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 500;
 }
 
 /*glow of the button*/
 .button-about{
     display: flex;
-    flex-direction: row;
-    margin-top: 3rem;
+    position: relative;
     justify-content: space-between;
-    width: 300px;
+    width: 38rem;
+    height: 5rem;
     
 }
 
@@ -587,7 +597,7 @@ align-items center will be better*/
 .heading-qualification{
     font-size: 5rem;
     text-align: center;
-    margin-bottom: 5rem;
+    padding: 5rem;
 }
 
 
@@ -1355,18 +1365,14 @@ textarea.input{
     }
 
     .home-img img{
-        width: 250px;
+        width: 300px;
     }
 
     /*=========ABOUT SECTION==============*/
     .about-containerIn{
         display: grid;
         align-items: center;
-        grid-template-columns: 0.5fr 3fr;
-    }
-
-    .about-img{
-        width: 250px;
+        grid-template-columns: 0.5fr;
     }
 
 }
@@ -1400,13 +1406,11 @@ textarea.input{
 
     /*=========ABOUT SECTION==============*/
     .about-containerIn{
-        display: grid;
-        align-items: center;
-        grid-template-columns: max-content 1fr 1fr;
+        grid-template-columns:max-content 1fr;
     }
 
-    .about-img{
-        width: 300px;
+    .about-description{
+        grid-column: initial;
     }
 
     /*========CONTACT SECTION======*/
@@ -1477,15 +1481,7 @@ textarea.input{
     }
 
     /*=========ABOUT SECTION==============*/
-    .about-containerIn{
-        display: grid;
-        align-items: center;
-        grid-template-columns: max-content 1fr 1fr;
-    }
 
-    .about-img{
-        width: 300px;
-    }
 
     /*========EDUCATION SECTION===========*/
     .education-row{
