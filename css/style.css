@@ -249,11 +249,10 @@ section{
 .home-img{
     display: flex;
     justify-content: center;
-    margin-right: 2rem;
 }
 
 .home-img img{
-    width: 200px;
+    width: 300px;
     pointer-events: none;
     border-radius: 5rem;
     
@@ -495,7 +494,8 @@ align-items center will be better*/
 
 /*button of about me*/
 .button{
-    padding: 1.3rem;
+    text-align: center;
+    padding: 1.5rem;
     font-size: 1.8rem;
     font-weight: 500;
 }
@@ -505,8 +505,7 @@ align-items center will be better*/
     display: flex;
     position: relative;
     justify-content: space-between;
-    width: 38rem;
-    height: 5rem;
+    width: 30rem;
     
 }
 
@@ -584,6 +583,7 @@ align-items center will be better*/
     align-items: center;
 }
 
+/*============My Journey Section=============*/
 .qualification{
     align-items: center;
     display: flex;
@@ -591,7 +591,8 @@ align-items center will be better*/
     flex-direction: column;
     min-height: auto;
     padding-bottom: 5rem;
-    margin-top: -5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .heading-qualification{
@@ -604,7 +605,8 @@ align-items center will be better*/
 .qualification .education-row{
     display: flex;
     flex-wrap: wrap;
-    gap: 5rem;
+    justify-content: center;
+    gap: 8rem;
 }
 
 .education-column .title{
@@ -706,9 +708,13 @@ align-items center will be better*/
 }
 
 .skill-container{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(2,1fr);
-    column-gap: 10rem;
+    column-gap: 8rem; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10rem;
 }
 
 .skills-title{
@@ -809,12 +815,13 @@ and the 0, -6px.....is the value of the movement*/
 .portfolio-container{
     position: relative;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    gap: 4rem;
     /*keep the size of the box and make it fix in the section
     and it will function when display:flex written*/
     flex-wrap: wrap;
-    margin: 0 ;
+    margin-left: 2rem ;
+    margin-right: 2rem;
 }
 
 .portfolio-container .card{
@@ -823,8 +830,8 @@ and the 0, -6px.....is the value of the movement*/
 
 .portfolio-container .card .face{
     /*size of the card*/
-    width: 300px;
-    height: 200px;
+    width: 280px;
+    height: 180px;
     transition: .4s;
 }
 
@@ -926,7 +933,9 @@ and the 0, -6px.....is the value of the movement*/
     padding: 20px;
     box-sizing: border-box;
     box-shadow: 0 20px 70px rgba(255, 12, 190, 0.575);
-    transform: translateY(-100px);
+    /*use to change the location of the card
+    when the size of the card change */
+    transform: translateY(-80px);
 }
 
 .portfolio-container .card:hover .face.face2{
@@ -1357,15 +1366,25 @@ textarea.input{
 
 }*/
 
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 350px) {
+
+    html{
+        font-size: 50%;
+    }
 
     /*=========HOME SECTION==============*/
+
+    .container{
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
     .home-content h1{
         font-size: 4rem;
     }
 
     .home-img img{
-        width: 300px;
+        width: 180px;
     }
 
     /*=========ABOUT SECTION==============*/
@@ -1385,6 +1404,12 @@ textarea.input{
         font-size: 50%;
     }
 
+    /*============Heading============*/
+    /*the margin of the theme-button*/
+    #theme-button{
+        margin-left: .5rem;
+    }
+
 
     /*======HOME SECTION======*/
     .home-contentLead{
@@ -1401,7 +1426,7 @@ textarea.input{
     }
 
     .home-img img{
-        width: 250px;
+        width: 260px;
     }
 
     /*=========ABOUT SECTION==============*/
@@ -1422,10 +1447,6 @@ textarea.input{
         flex-direction: column;
     }
 
-    /*the margin of the theme-button*/
-    #theme-button{
-        margin-left: .5rem;
-    }
 }
 
 /*==========MIN SCREEN 768PX============*/
@@ -1453,6 +1474,7 @@ textarea.input{
 
     /*========HOME SECTION===========*/
 
+    /*make the container place at the center*/
     .container{
         margin-left: auto;
         margin-right: auto;
@@ -1477,17 +1499,13 @@ textarea.input{
     }
 
     .home-img img{
-        width: 250px;
+        width: 300px;
     }
 
     /*=========ABOUT SECTION==============*/
 
 
     /*========EDUCATION SECTION===========*/
-    .education-row{
-        padding: 10rem 4% 5rem 5%;
-    }
-
     .contact-info{
         margin-bottom: 2rem;
     }
@@ -1507,6 +1525,8 @@ textarea.input{
     .footer_container a{
         margin-top: 2rem;
     }*/
+
+
 }
 
 /*For large devices*/
