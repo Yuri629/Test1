@@ -1183,6 +1183,7 @@ textarea.input{
 }
 
 .footer-bg{
+    /*make the bg of the footer*/
     background-color: var(--main-color);
     padding: 2rem 0 3rem;
 }
