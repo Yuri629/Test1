@@ -1184,6 +1184,7 @@ textarea.input{
 
 .footer-bg{
     background-color: var(--main-color);
+    padding: 2rem 0 3rem;
 }
 
 .footer_container{
