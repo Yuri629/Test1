@@ -68,17 +68,7 @@ body{
     color:var(--text-color);
 }
 
-/*!!!!!USE TO SOLVE THE RIGHT BLANK SPACE PROBLEM
-    WHEN CHANGING THE WIDTH OF THE SCREEN*/
-    html,body{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    /*overflow-x is to clip the content or add a scroll bar*/
-    /*clip the content when the overflow st the left or right edges*/
-    overflow-x: hidden;
-} 
+
 
 
 /*class=header navbar*/
@@ -89,12 +79,12 @@ body{
     top:0;
     left:0;
     width:100%;
-    padding: 3rem;
-    height: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 2rem 9%;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
     /*the order of the element*/
     z-index: 100;
     transition: .3s;
@@ -104,8 +94,6 @@ body{
 /*.sticky is use in JavaScript*/
 .header.sticky{
     background: var(--bg-color);
-    
-    z-index: 12000;
 }
 
 
@@ -444,8 +432,8 @@ with the same class= 'btn'*/
 /*section about me*/
 .heading{
     font-size: 5rem;
-    margin-bottom: 3rem;
     text-align: center;
+    padding: 5rem;
 }
 
 span{
@@ -595,12 +583,6 @@ align-items center will be better*/
     margin-right: 2rem;
 }
 
-.heading-qualification{
-    font-size: 5rem;
-    text-align: center;
-    padding: 5rem;
-}
-
 
 .qualification .education-row{
     display: flex;
@@ -698,14 +680,7 @@ align-items center will be better*/
 }
 
 /*=============SKILLS============*/
-.Skills h2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: var(--font-size-section-title);
-    margin-bottom: 5rem;
-    color: var(--main-color);
-}
+
 
 .skill-container{
     /* display: grid;
@@ -803,15 +778,6 @@ and the 0, -6px.....is the value of the movement*/
 }
 
 /*********************Section Portfolio********************/
-.portfolio h1{
-    display: flex;
-    justify-content: center;
-    font-size: var(--font-size-section-title);
-    margin-bottom: 2rem;
-
-}
-
-/*--===================Portfolio Container=================*/
 .portfolio-container{
     position: relative;
     display: flex;
@@ -971,7 +937,7 @@ and the 0, -6px.....is the value of the movement*/
     box-shadow: inset 0px 0px 10px var(--main-color);
 }
 
-/*===================Contact section================*/
+/*===================CONTACT SECTION================*/
 .section_title{
     display: flex;
     justify-content: center;
@@ -984,10 +950,11 @@ and the 0, -6px.....is the value of the movement*/
 .contact-container{
     /*display: grid is very important to change the tmeplate of the section*/
     /*if not the grid-template-columns dont function well*/
-    display: grid;
-    grid-template-columns: 300px 340px;
-    column-gap: 2rem;
-    justify-content: center;
+    display: flex;
+    /*fix the size of the items by changing the layout of the content*/
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: space-between;
     align-items: center; 
 }
 
@@ -1172,15 +1139,19 @@ textarea.input{
     display: flex;
     color: var(--third-bg-color);
     background-color: var(--main-color);
+
     padding: .8rem;
-    width: 15rem;
+    width: 20rem;
     height: 100%;
-    border-radius: .5rem;
     font-size: 1.5rem;
     font-weight: 600;
+
     display: flex;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
+
+    border-radius: .5rem;
     border: 2px solid var(--main-color);
     transition: .3s;
     z-index: 1;
@@ -1192,13 +1163,13 @@ textarea.input{
     box-shadow: 0px 0px 15px var(--main-color);
 }
 
-.contact_message{
+/* .contact_message{
     font-size: 1.2rem;
     margin-top: 1rem;
     font-weight: 500;
     color: var(--text-color);
 
-}
+} */
 
 /*==================FOOTER=================*/
 .footer{
@@ -1209,7 +1180,6 @@ textarea.input{
     padding: 2rem 9%;
     background-color: var(--main-color);
     width: 100vw;
-    padding-top: 40px;
     color: var(--third-bg-color);
 }
 
@@ -1384,16 +1354,34 @@ textarea.input{
     }
 
     .home-img img{
-        width: 180px;
+        width: 230px;
     }
 
-    /*=========ABOUT SECTION==============*/
-    .about-containerIn{
-        display: grid;
-        align-items: center;
-        grid-template-columns: 0.5fr;
+    /*==========CONTACT SECTION==============*/
+    
+    .contact-container{
+        justify-content: center;
     }
 
+}
+
+/*For width screen between 350 to 568px*/
+@media screen and (min-width: 350px) {
+
+    /*Whole padding of the website*/
+    html{
+        font-size: 50%;
+    }
+
+    /*=========HOME SECTION==============*/
+    .home-img img{
+        width: 250px;
+    }
+
+    /*==========CONTACT SECTION==============*/
+    .contact-container{
+        justify-content: center;
+    }    
 }
 
 /*==============For medium devices=================*/
@@ -1438,14 +1426,12 @@ textarea.input{
         grid-column: initial;
     }
 
-    /*========CONTACT SECTION======*/
+    /*=========CONTACT SECTION=============*/
     .contact-container{
-        display: grid;
-        grid-template-rows: max-content 1fr 1fr;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
+        justify-content: center;
     }
+
+
 
 }
 
@@ -1568,7 +1554,7 @@ textarea.input{
 
 /*===============display the list of the navigate Bar until 
                  screen width 768px==============*/
-@media (max-width: 768px){
+@media screen and (max-width: 768px){
 
 
     .header{
