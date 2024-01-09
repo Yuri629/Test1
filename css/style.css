@@ -463,11 +463,6 @@ align-items center will be better*/
 }
 
 
-.about-container{
-    display: grid;
-    justify-content: center;
-}
-
 .about-description{
     font-size: 1.6rem;
     text-align: initial;
