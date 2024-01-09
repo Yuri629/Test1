@@ -279,7 +279,7 @@ is under home-content*/
     /*dont repeat the pic*/
     background-repeat: no-repeat;
     /*make the background color fit into the text*/
-    -webkit-background-clip: text;
+    background-clip: text;
     /*fix the position of the background position*/
     background-position: 0 0;
     animation: homeBgText 6s linear infinite;
