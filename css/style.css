@@ -63,7 +63,7 @@ html{
 
 
 body{
-    margin: 0 0 3rem 0;
+    /* margin: 0 0 3rem 0; */
     background: var(--bg-color);
     color:var(--text-color);
 }
@@ -1173,14 +1173,17 @@ textarea.input{
 
 /*==================FOOTER=================*/
 .footer{
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    padding: 2rem 9%;
+    flex-wrap: wrap; */
+    padding-top: 2rem;
+    /* width: 100vw; */
+    /* color: var(--third-bg-color); */
+}
+
+.footer-bg{
     background-color: var(--main-color);
-    width: 100vw;
-    color: var(--third-bg-color);
 }
 
 .footer_container{
@@ -1353,6 +1356,10 @@ textarea.input{
         font-size: 4rem;
     }
 
+    .home-img{
+        padding-top: 3.5rem;
+    }
+
     .home-img img{
         width: 230px;
     }
@@ -1374,6 +1381,10 @@ textarea.input{
     }
 
     /*=========HOME SECTION==============*/
+    .home-img{
+        padding-top: 3.5rem;
+    }
+
     .home-img img{
         width: 250px;
     }
